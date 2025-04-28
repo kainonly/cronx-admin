@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
 
-import { AppModule } from '@share';
+import { ShareModule } from '@common/share.module';
 
 @Component({
   selector: 'app-root',
-  imports: [AppModule],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  imports: [ShareModule],
+  template: ` <router-outlet></router-outlet> `
 })
 export class AppComponent {}

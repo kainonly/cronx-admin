@@ -1,4 +1,3 @@
-import { DragDropModule } from '@angular/cdk/drag-drop';
 import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -25,26 +24,23 @@ import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzInputNumberModule } from 'ng-zorro-antd/input-number';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { NzListModule } from 'ng-zorro-antd/list';
+import { NzMessageModule } from 'ng-zorro-antd/message';
 import { NzModalModule } from 'ng-zorro-antd/modal';
+import { NzNotificationModule } from 'ng-zorro-antd/notification';
 import { NzPageHeaderModule } from 'ng-zorro-antd/page-header';
 import { NzPipesModule } from 'ng-zorro-antd/pipes';
 import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
 import { NzPopoverModule } from 'ng-zorro-antd/popover';
 import { NzRadioModule } from 'ng-zorro-antd/radio';
-import { NzResultModule } from 'ng-zorro-antd/result';
 import { NzSegmentedModule } from 'ng-zorro-antd/segmented';
 import { NzSelectModule } from 'ng-zorro-antd/select';
 import { NzSpaceModule } from 'ng-zorro-antd/space';
-import { NzStatisticModule } from 'ng-zorro-antd/statistic';
 import { NzSwitchModule } from 'ng-zorro-antd/switch';
 import { NzTableModule } from 'ng-zorro-antd/table';
 import { NzTabsModule } from 'ng-zorro-antd/tabs';
 import { NzTagModule } from 'ng-zorro-antd/tag';
 import { NzTimePickerModule } from 'ng-zorro-antd/time-picker';
-import { NzTimelineModule } from 'ng-zorro-antd/timeline';
 import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
-import { NzTransferModule } from 'ng-zorro-antd/transfer';
-import { NzTreeModule } from 'ng-zorro-antd/tree';
 import { NzTypographyModule } from 'ng-zorro-antd/typography';
 
 @NgModule({
@@ -86,20 +82,16 @@ import { NzTypographyModule } from 'ng-zorro-antd/typography';
     NzSegmentedModule,
     NzToolTipModule,
     NzDrawerModule,
+    NzMessageModule,
     NzModalModule,
     NzPopconfirmModule,
+    NzNotificationModule,
     NzImageModule,
     NzEmptyModule,
     NzPipesModule,
-    NzAlertModule,
-    NzTimelineModule,
-    NzResultModule,
-    NzTransferModule,
-    NzTreeModule,
-    NzStatisticModule,
-    DragDropModule
+    NzAlertModule
   ],
   imports: [NgOptimizedImage],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class AppModule {}
+export class ShareModule {}

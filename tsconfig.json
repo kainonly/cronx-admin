@@ -19,12 +19,8 @@
     "target": "ES2022",
     "module": "ES2022",
     "paths": {
-      "@share": [
-        "src/app/app.module.ts"
-      ],
-      "ngx-xgplayer": [
-        "./dist/ngx-xgplayer"
-      ]
+      "@common": ["src/common/index.ts"],
+      "@common/*": ["src/common/*"]
     }
   },
   "angularCompilerOptions": {
