@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "flow": {
+    "light": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -20,7 +20,9 @@
             "outputPath": "dist",
             "index": "src/index.html",
             "browser": "src/main.ts",
-            "polyfills": ["zone.js"],
+            "polyfills": [
+              "zone.js"
+            ],
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "less",
             "assets": [
@@ -29,9 +31,15 @@
                 "input": "public"
               }
             ],
-            "styles": ["src/styles.less"],
-            "allowedCommonJsDependencies": ["size-sensor", "d3-regression", "fmin", "pdfast"],
-            "scripts": []
+            "styles": [
+              "src/styles.less"
+            ],
+            "scripts": [],
+            "server": "src/main.server.ts",
+            "prerender": true,
+            "ssr": {
+              "entry": "src/server.ts"
+            }
           },
           "configurations": {
             "production": {
@@ -47,8 +55,7 @@
                   "maximumError": "8kB"
                 }
               ],
-              "outputHashing": "all",
-              "serviceWorker": "ngsw-config.json"
+              "outputHashing": "all"
             },
             "development": {
               "optimization": false,
@@ -73,10 +80,10 @@
           },
           "configurations": {
             "production": {
-              "buildTarget": "flow:build:production"
+              "buildTarget": "light:build:production"
             },
             "development": {
-              "buildTarget": "flow:build:development"
+              "buildTarget": "light:build:development"
             }
           },
           "defaultConfiguration": "development"

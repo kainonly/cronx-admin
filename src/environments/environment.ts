@@ -1,4 +1,5 @@
 export const environment = {
   production: true,
-  baseUrl: 'https://flow-api.kainonly.com'
+  baseUrl: 'https://light.kainonly.com/api',
+  cdn: 'https://cdn.kainonly.com'
 };

@@ -1,0 +1,46 @@
+<nz-layout [style.height.%]="100">
+  <nz-page-header style="border-bottom: 1px solid #f0f0f0" [nzGhost]="false">
+    <nz-page-header-title>
+      <nz-breadcrumb>
+        <nz-breadcrumb-item>
+          <nz-icon nzType="home" nzTheme="outline" />
+        </nz-breadcrumb-item>
+        <nz-breadcrumb-item>
+          <a>
+            KAINONLY's Team
+            <nz-icon nzType="caret-down" nzTheme="outline" />
+          </a>
+        </nz-breadcrumb-item>
+      </nz-breadcrumb>
+    </nz-page-header-title>
+    <nz-page-header-extra>
+      <nz-space nzAlign="center">
+        <button *nzSpaceItem nz-button nzType="default" nzShape="circle">
+          <nz-icon nzType="bug" nzTheme="outline" />
+        </button>
+        <button *nzSpaceItem nz-button nzType="default" nzShape="circle">
+          <nz-icon nzType="notification" nzTheme="outline" />
+        </button>
+        <button *nzSpaceItem nz-button nzType="default" nzShape="circle">
+          <nz-icon nzType="read" nzTheme="outline" />
+        </button>
+        <a *nzSpaceItem>
+          <nz-avatar [nzSize]="32" [nzText]="'K'"></nz-avatar>
+        </a>
+      </nz-space>
+    </nz-page-header-extra>
+    <nz-page-header-footer style="margin-top: 0">
+      <ul style="margin-top: -2px; border: none" nz-menu nzMode="horizontal">
+        <li nz-menu-item nzSelected> <nz-icon nzType="dashboard" /> 项目概况 </li>
+        <li nz-menu-item> <nz-icon nzType="project" /> 任务调度 </li>
+        <li nz-menu-item> <nz-icon nzType="cluster" /> 托管服务 </li>
+        <li nz-menu-item> <nz-icon nzType="inbox" /> 资源管理 </li>
+        <li nz-menu-item> <nz-icon nzType="team" /> 团队设置 </li>
+      </ul>
+    </nz-page-header-footer>
+  </nz-page-header>
+
+  <nz-content>
+    <router-outlet></router-outlet>
+  </nz-content>
+</nz-layout>

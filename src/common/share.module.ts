@@ -24,9 +24,7 @@ import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzInputNumberModule } from 'ng-zorro-antd/input-number';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { NzListModule } from 'ng-zorro-antd/list';
-import { NzMessageModule } from 'ng-zorro-antd/message';
 import { NzModalModule } from 'ng-zorro-antd/modal';
-import { NzNotificationModule } from 'ng-zorro-antd/notification';
 import { NzPageHeaderModule } from 'ng-zorro-antd/page-header';
 import { NzPipesModule } from 'ng-zorro-antd/pipes';
 import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
@@ -82,10 +80,8 @@ import { NzTypographyModule } from 'ng-zorro-antd/typography';
     NzSegmentedModule,
     NzToolTipModule,
     NzDrawerModule,
-    NzMessageModule,
     NzModalModule,
     NzPopconfirmModule,
-    NzNotificationModule,
     NzImageModule,
     NzEmptyModule,
     NzPipesModule,
