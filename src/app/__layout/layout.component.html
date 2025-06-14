@@ -31,11 +31,21 @@
     </nz-page-header-extra>
     <nz-page-header-footer style="margin-top: 0">
       <ul style="margin-top: -2px; border: none" nz-menu nzMode="horizontal">
-        <li nz-menu-item nzSelected> <nz-icon nzType="dashboard" /> 项目概况 </li>
-        <li nz-menu-item> <nz-icon nzType="project" /> 任务调度 </li>
-        <li nz-menu-item> <nz-icon nzType="cluster" /> 托管服务 </li>
-        <li nz-menu-item> <nz-icon nzType="inbox" /> 资源管理 </li>
-        <li nz-menu-item> <nz-icon nzType="team" /> 团队设置 </li>
+        <li nz-menu-item nzMatchRouter>
+          <a [routerLink]="['./', 'overview']"> <nz-icon nzType="dashboard" nzTheme="outline" /> 项目概况 </a>
+        </li>
+        <li nz-menu-item nzMatchRouter>
+          <a [routerLink]="['./', 'schedule']"> <nz-icon nzType="project" nzTheme="outline" /> 任务调度 </a>
+        </li>
+        <li nz-menu-item nzMatchRouter>
+          <a [routerLink]="['./', 'service']"> <nz-icon nzType="cluster" nzTheme="outline" /> 托管服务 </a>
+        </li>
+        <li nz-menu-item nzMatchRouter>
+          <a [routerLink]="['./', 'resource']"> <nz-icon nzType="inbox" nzTheme="outline" /> 资源管理 </a>
+        </li>
+        <li nz-menu-item nzMatchRouter>
+          <a [routerLink]="['./', 'setting']"> <nz-icon nzType="team" nzTheme="outline" /> 团队设置 </a>
+        </li>
       </ul>
     </nz-page-header-footer>
   </nz-page-header>

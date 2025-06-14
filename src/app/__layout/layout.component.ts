@@ -1,6 +1,5 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NzBreadCrumbModule } from 'ng-zorro-antd/breadcrumb';
-import { NzDrawerService } from 'ng-zorro-antd/drawer';
 
 import { ShareModule } from '@common/share.module';
 
@@ -9,10 +8,8 @@ import { ShareModule } from '@common/share.module';
   imports: [ShareModule, NzBreadCrumbModule],
   selector: 'app-layout',
   templateUrl: './layout.component.html',
-  styleUrl: './layout.component.scss'
+  styleUrl: './layout.component.less'
 })
 export class LayoutComponent implements OnInit {
-  private drawer = inject(NzDrawerService);
-
   ngOnInit(): void {}
 }
