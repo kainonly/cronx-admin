@@ -8,7 +8,6 @@ import {
   importProvidersFrom,
   isDevMode
 } from '@angular/core';
-import { provideClientHydration, withEventReplay } from '@angular/platform-browser';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { provideRouter, withHashLocation, withViewTransitions } from '@angular/router';
 import { provideServiceWorker } from '@angular/service-worker';
