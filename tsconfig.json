@@ -3,6 +3,7 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "baseUrl": "./",
     "strict": true,
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
@@ -13,7 +14,18 @@
     "experimentalDecorators": true,
     "importHelpers": true,
     "target": "ES2022",
-    "module": "preserve"
+    "module": "preserve",
+    "paths": {
+      "@env": ["src/environments/environment.ts"],
+      "@shared": ["src/shared/public-api.ts"],
+      "@shared/models": ["src/shared/models"],
+      "@shared/models/*": ["src/shared/models/*"],
+      "@shared/apis": ["src/shared/apis"],
+      "@shared/apis/*": ["src/shared/apis/*"],
+      "@shared/components/*": ["src/shared/components/*"],
+      "@shared/directives/*": ["src/shared/directives/*"],
+      "@shared/pipes/*": ["src/shared/pipes/*"]
+    }
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
