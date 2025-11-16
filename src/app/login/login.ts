@@ -33,9 +33,9 @@ export class Login {
       .connect(data)
       .pipe(takeUntilDestroyed(this.destroyRef))
       .subscribe({
-        next: data => {
-          console.log(data);
+        next: () => {
           this.loading.end();
+          this.global.setEndpoint(data);
           this.router.navigateByUrl('/schedulers');
           this.notification.success(`接入成功`, `🚀正在加载页面...`);
         },

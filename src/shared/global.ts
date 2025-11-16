@@ -10,7 +10,7 @@ import { Basic, R, SearchOption } from '@shared/models';
 import { EXTERNAL } from './public-api';
 import { Model } from './utils/model';
 
-interface ConnectDto {
+interface ConnectOption {
   endpoint: string;
   token: string;
 }
@@ -25,10 +25,18 @@ export class Global {
     return new Model<T, S>(storageKey, this.storage, api, search);
   }
 
-  connect(dto: ConnectDto): Observable<R> {
-    return this.http.get(dto.endpoint, {
-      headers: { Authorization: `Bearer ${dto.token}` },
+  connect(opt: ConnectOption): Observable<R> {
+    return this.http.get(opt.endpoint, {
+      headers: { Authorization: `Bearer ${opt.token}` },
       context: new HttpContext().set(EXTERNAL, true)
+    });
+  }
+
+  setEndpoint(data: ConnectOption): void {
+    sessionStorage.setItem('endpoint', data.endpoint);
+    sessionStorage.setItem('token', data.token);
+    this.storage.get(`endpoints`).subscribe(raw => {
+      console.log(raw);
     });
   }
 }

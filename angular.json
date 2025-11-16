@@ -50,16 +50,10 @@
               ],
               "outputHashing": "all"
             },
-            "kain": {
+            "development": {
               "optimization": false,
               "extractLicenses": false,
-              "sourceMap": true,
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.kain.ts"
-                }
-              ]
+              "sourceMap": true
             }
           },
           "defaultConfiguration": "production"
@@ -67,19 +61,17 @@
         "serve": {
           "builder": "@angular/build:dev-server",
           "options": {
-            "hmr": true,
-            "host": "0.0.0.0",
-            "allowedHosts": ["sys.kainonly.com"]
+            "hmr": true
           },
           "configurations": {
             "production": {
               "buildTarget": "cronx-admin:build:production"
             },
-            "kain": {
-              "buildTarget": "cronx-admin:build:kain"
+            "development": {
+              "buildTarget": "cronx-admin:build:development"
             }
           },
-          "defaultConfiguration": "kain"
+          "defaultConfiguration": "development"
         },
         "extract-i18n": {
           "builder": "@angular/build:extract-i18n"

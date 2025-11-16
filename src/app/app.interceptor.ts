@@ -5,7 +5,6 @@ import { NzMessageService } from 'ng-zorro-antd/message';
 import { NzModalService } from 'ng-zorro-antd/modal';
 import { catchError, Observable, throwError } from 'rxjs';
 
-import { environment } from '@env';
 import { EXTERNAL } from '@shared';
 
 export function appInterceptor(req: HttpRequest<unknown>, next: HttpHandlerFn): Observable<HttpEvent<unknown>> {
@@ -15,12 +14,13 @@ export function appInterceptor(req: HttpRequest<unknown>, next: HttpHandlerFn): 
   const router = inject(Router);
   const message = inject(NzMessageService);
   const modal = inject(NzModalService);
+  const endpoint = sessionStorage.getItem('endpoint');
 
   return next(
     req.clone({
       ...req,
       ...{
-        url: `${environment.baseUrl}/${req.url}`,
+        url: `${endpoint}/${req.url}`,
         withCredentials: true
       }
     })
