@@ -1,13 +1,19 @@
-import { HttpClient, HttpResponse } from '@angular/common/http';
+import { HttpClient, HttpContext } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { NzModalService } from 'ng-zorro-antd/modal';
 import { Observable } from 'rxjs';
 
 import { StorageMap } from '@ngx-pwa/local-storage';
 import { Api } from '@shared/apis';
-import { Any, Basic, R, SearchOption } from '@shared/models';
+import { Basic, R, SearchOption } from '@shared/models';
 
+import { EXTERNAL } from './public-api';
 import { Model } from './utils/model';
+
+interface ConnectDto {
+  endpoint: string;
+  token: string;
+}
 
 @Injectable({ providedIn: 'root' })
 export class Global {
@@ -19,15 +25,10 @@ export class Global {
     return new Model<T, S>(storageKey, this.storage, api, search);
   }
 
-  login(dto: Any): Observable<R> {
-    return this.http.post('login', dto);
-  }
-
-  verify(): Observable<HttpResponse<R>> {
-    return this.http.get('verify', { observe: 'response' });
-  }
-
-  logout(): Observable<R> {
-    return this.http.post('logout', {});
+  connect(dto: ConnectDto): Observable<R> {
+    return this.http.get(dto.endpoint, {
+      headers: { Authorization: `Bearer ${dto.token}` },
+      context: new HttpContext().set(EXTERNAL, true)
+    });
   }
 }

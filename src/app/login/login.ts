@@ -4,7 +4,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 
-import { Global, SharedModule } from '@shared';
+import { Global, Loading, SharedModule } from '@shared';
 import { Any } from '@shared/models';
 
 @Component({
@@ -22,24 +22,26 @@ export class Login {
   private notification = inject(NzNotificationService);
 
   form: FormGroup = this.fb.group({
-    email: [null, [Validators.email]],
-    password: [null, [Validators.required]]
+    endpoint: ['http://localhost:9000', [Validators.required]],
+    token: [null, [Validators.required]]
   });
-  loading = false;
-  passwordVisible = false;
+  loading = new Loading();
 
   submit(data: Any): void {
-    this.loading = true;
+    this.loading.start();
     this.global
-      .login(data)
+      .connect(data)
       .pipe(takeUntilDestroyed(this.destroyRef))
       .subscribe({
-        next: () => {
-          this.loading = false;
-          this.router.navigateByUrl('/jobs');
+        next: data => {
+          console.log(data);
+          this.loading.end();
+          this.router.navigateByUrl('/schedulers');
+          this.notification.success(`接入成功`, `🚀正在加载页面...`);
         },
-        error: e => {
-          this.loading = false;
+        error: () => {
+          this.loading.end();
+          this.notification.error(`接入失败`, `❌临时令牌不一致或已失效`);
         }
       });
   }

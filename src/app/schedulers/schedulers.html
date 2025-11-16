@@ -1,11 +1,6 @@
 <ng-template #left>
   <nz-space nzAlign="center">
-    <app-keyword
-      *nzSpaceItem
-      [appModel]="m"
-      (appOnSearch)="getData(true)"
-      appPlaceholder="Search ID, URL, name"
-    ></app-keyword>
+    <app-keyword *nzSpaceItem [appModel]="m" (appOnSearch)="getData(true)" appPlaceholder="搜索ID"></app-keyword>
     <app-toolbox *nzSpaceItem [appModel]="m" (appRefresh)="getData(true)" (appClear)="getData(true)"></app-toolbox>
   </nz-space>
 </ng-template>
@@ -13,20 +8,20 @@
   <nz-space nzAlign="center">
     @if (m.selection.size !== 0) {
       <a nz-dropdown *nzSpaceItem [nzDropdownMenu]="bulkAction">
-        Selected {{ m.selection.size }} items
+        已选择 {{ m.selection.size }} 个项目
         <span nz-icon nzType="down"></span>
       </a>
     }
 
     <nz-dropdown-menu #bulkAction>
       <ul nz-menu nzSelectable>
-        <li nz-menu-item nzDanger (click)="bulkDelete()">Delete</li>
+        <li nz-menu-item nzDanger (click)="bulkDelete()">删除</li>
         <li nz-menu-divider></li>
-        <li nz-menu-item (click)="m.clearSelections()">Cancel</li>
+        <li nz-menu-item (click)="m.clearSelections()">取消选择</li>
       </ul>
     </nz-dropdown-menu>
 
-    <button *nzSpaceItem nz-button nzType="primary" (click)="open()">Create</button>
+    <button *nzSpaceItem nz-button nzType="primary" (click)="open()">新增</button>
   </nz-space>
 </ng-template>
 
