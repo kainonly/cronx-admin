@@ -2,7 +2,7 @@
   "name": "cronx-admin",
   "version": "20.0.0",
   "scripts": {
-    "dev:kain": "ng serve",
+    "dev": "ng serve",
     "build": "ng build",
     "lint": "ng lint"
   },

@@ -1,4 +1,6 @@
 export interface Job {
   id: string;
-  name: string;
+  crontab: string;
+  method: string;
+  url: string;
 }

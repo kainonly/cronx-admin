@@ -1,6 +1,6 @@
 <ng-template #left>
   <nz-space nzAlign="center">
-    <app-keyword *nzSpaceItem [appModel]="m" (appOnSearch)="getData(true)" appPlaceholder="搜索ID"></app-keyword>
+    <app-keyword *nzSpaceItem [appModel]="m" (appOnSearch)="getData(true)" appPlaceholder="索引"></app-keyword>
     <app-toolbox *nzSpaceItem [appModel]="m" (appRefresh)="getData(true)" (appClear)="getData(true)"></app-toolbox>
   </nz-space>
 </ng-template>
@@ -54,17 +54,17 @@
             [nzIndeterminate]="m.indeterminate"
             (nzCheckedChange)="m.setCurrentSelections($event)"
           ></th>
-          <th nzWidth="360px">
+          <th>
             <b>日程名称</b>
           </th>
           <th nzWidth="240px">
-            <b>TIME PATTERN</b>
-          </th>
-          <th>
-            <b>URL</b>
+            <b>索引</b>
           </th>
           <th nzWidth="240px">
-            <b>RUNS IN</b>
+            <b>时区</b>
+          </th>
+          <th nzWidth="240px">
+            <b>状态</b>
           </th>
           <th nzRight nzAlign="center" nzWidth="50px">
             <button nz-button nzType="text">
