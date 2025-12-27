@@ -1,0 +1,24 @@
+<nz-layout [style.height.%]="100">
+  <nz-header>
+    <nz-row nzJustify="space-between" nzAlign="middle">
+      <nz-col>
+        <ul class="navigation" nz-menu nzMode="horizontal">
+          <li nz-menu-item nzMatchRouter>
+            <a [routerLink]="['/schedulers']"> 日程调试器 </a>
+          </li>
+          <li nz-menu-item nzMatchRouter>
+            <a [routerLink]="['/configs']"> 存储配置 </a>
+          </li>
+        </ul>
+      </nz-col>
+      <nz-col> </nz-col>
+      <nz-col>
+        <button nz-button nzType="text">切换端点</button>
+      </nz-col>
+    </nz-row>
+  </nz-header>
+
+  <nz-content style="padding: 8px; overflow: hidden auto">
+    <ng-content></ng-content>
+  </nz-content>
+</nz-layout>
